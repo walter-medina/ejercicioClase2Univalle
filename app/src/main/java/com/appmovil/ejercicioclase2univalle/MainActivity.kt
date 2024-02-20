@@ -13,10 +13,9 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         binding.btnCalcular.setOnClickListener {
-            binding.tvResultado.text = validarCategoría()        }
-
+            binding.tvResultado.text = validarCategoría()
+        }
     }
-
     private fun validarCategoría() : String {
         val imc = calcularIMC()
         return when {
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
             else -> "Obesidad"
         }
     }
-
     private fun calcularIMC(): Double{
         val estatura= binding.etEstatura.text.toString().toDouble()
         val peso = binding.etPeso.text.toString().toDouble()
