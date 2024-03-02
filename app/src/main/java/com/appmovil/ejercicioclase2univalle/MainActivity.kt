@@ -11,9 +11,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-
+        actionButonCalculate()
+    }
+    private fun actionButonCalculate(){
         binding.btnCalcular.setOnClickListener {
             binding.tvResultado.text = validarCategoría()
+            binding.etEstatura.setText("")
+            binding.etPeso.setText("")
         }
     }
     private fun validarCategoría() : String {
